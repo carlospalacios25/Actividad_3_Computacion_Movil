@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Actividad_3_Computacion_Movil</string>
+
+    <string name="tvTituloPortada">Menu Principal</string>
+    <string name="btnIngresabl">Ingresa Bluetooth</string>
+    <string name="btnIngresaCam">Ingresa Camara</string>
+
+    <string name="btnDesactivarBt">Desactivar Bluetooth</string>
+    <string name="btnActivarBt">Activar Bluetooth</string>
+    <string name="tvBluetooth">Menu de Bluetooth</string>
+
+
+</resources>
