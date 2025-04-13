@@ -43,7 +43,6 @@ public class Activar_Bt extends AppCompatActivity {
         this.btnActivarBt.setOnClickListener(this::ActivarBt);
         this.btnDesactivarBt.setOnClickListener(this::DesactivarBt);
 
-        // Detectar el estado del Bluetooth al iniciar la actividad
         detectarEstadoBluetooth();
     }
 
