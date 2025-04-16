@@ -4,10 +4,19 @@
     <string name="tvTituloPortada">Menu Principal</string>
     <string name="btnIngresabl">Ingresa Bluetooth</string>
     <string name="btnIngresaCam">Ingresa Camara</string>
+    <string name="btnNewFile">Crear Archivo</string>
 
     <string name="btnDesactivarBt">Desactivar Bluetooth</string>
     <string name="btnActivarBt">Activar Bluetooth</string>
     <string name="tvBluetooth">Menu de Bluetooth</string>
 
+    <string name="tvTituloN">Crear Archivo Txt</string>
+    <string name="edNombreArc">Nombre Archivo</string>
+    <string name="tvBaterry">Nivel de baterria: </string>
+    <string name="tvVersion">Verion Android: </string>
+    <string name="btnSave">Guardar Archivo</string>
+
+    <string name="tvEstudiateDos">Daniel Correa </string>
+    <string name="tvEstudiateUno">Carlos Tocarruncho</string>
 
 </resources>

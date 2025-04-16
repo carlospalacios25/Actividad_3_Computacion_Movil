@@ -11,7 +11,7 @@
         android:id="@+id/tvTituloPortada"
         android:layout_width="137dp"
         android:layout_height="0dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="84dp"
         android:hint="@string/tvTituloPortada"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,26 +23,36 @@
         android:id="@+id/btnIngresabl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="76dp"
         android:backgroundTint="@color/blue"
         android:text="@string/btnIngresabl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnIngresaCam"
-        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPortada" />
+
+    <Button
+        android:id="@+id/btnNewFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/btnNewFile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresaCam" />
 
     <Button
         android:id="@+id/btnIngresaCam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_width="155dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue"
         android:text="@string/btnIngresaCam"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresabl" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
