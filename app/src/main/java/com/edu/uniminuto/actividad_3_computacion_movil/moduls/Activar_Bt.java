@@ -75,7 +75,6 @@ public class Activar_Bt extends AppCompatActivity {
             return;
         }
 
-        // Verificar permisos
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             if (checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 100);
@@ -84,7 +83,6 @@ public class Activar_Bt extends AppCompatActivity {
             }
         }
 
-        // Activar Bluetooth si no está habilitado
         if (!bluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
@@ -111,9 +109,7 @@ public class Activar_Bt extends AppCompatActivity {
             startActivity(intent);
             Toast.makeText(this, "Por favor desactiva Bluetooth manualmente", Toast.LENGTH_LONG).show();
             Log.d(TAG, "Redirigiendo a ajustes para desactivar Bluetooth");
-            // Limpiar la lista inmediatamente, asumiendo que el usuario desactivará Bluetooth
             limpiarLista();
-            // Actualizar el estado (se confirmará en onResume)
             tvBluetooth.setText("Estado del Bluetooth: Desactivando...");
         } else {
             tvBluetooth.setText("Estado del Bluetooth: Desactivado");
@@ -132,7 +128,6 @@ public class Activar_Bt extends AppCompatActivity {
             return;
         }
 
-        // Verificar permisos
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             if (checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 100);
@@ -141,7 +136,6 @@ public class Activar_Bt extends AppCompatActivity {
             }
         }
 
-        // Verificar que Bluetooth esté habilitado
         if (!bluetoothAdapter.isEnabled()) {
             tvBluetooth.setText("Estado del Bluetooth: Desactivado");
             Toast.makeText(this, "Por favor, activa Bluetooth primero", Toast.LENGTH_SHORT).show();
@@ -149,12 +143,10 @@ public class Activar_Bt extends AppCompatActivity {
             return;
         }
 
-        // Limpiar la lista antes de cargar los dispositivos
         listaDispositivos.clear();
         dispositivosAdapter.notifyDataSetChanged();
         Log.d(TAG, "Lista de dispositivos limpiada");
 
-        // Obtener dispositivos emparejados
         Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
         if (pairedDevices != null && pairedDevices.size() > 0) {
             for (BluetoothDevice device : pairedDevices) {
@@ -181,7 +173,7 @@ public class Activar_Bt extends AppCompatActivity {
     private void reference() {
         this.btnActivarBt = findViewById(R.id.btnActivarBt);
         this.btnDesactivarBt = findViewById(R.id.btnDesactivarBt);
-        this.tvBluetooth = findViewById(R.id.tvBluetooth); // Referenciar el TextView
+        this.tvBluetooth = findViewById(R.id.tvBluetooth);
         this.listaBt = findViewById(R.id.lvBluetooth);
         this.dispositivosAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaDispositivos);
         this.listaBt.setAdapter(dispositivosAdapter);
@@ -232,7 +224,6 @@ public class Activar_Bt extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Volver a detectar el estado del Bluetooth al regresar de los ajustes
         detectarEstadoBluetooth();
     }
 }
